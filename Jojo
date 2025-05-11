@@ -1,0 +1,110 @@
+<!DOCTYPE html><html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>إلى جوجو وجاسي</title>
+  <style>
+    body {
+      background-color: white;
+      font-family: 'Cairo', sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      direction: rtl;
+    }
+    .page {
+      display: none;
+      padding: 20px;
+    }
+    .active {
+      display: block;
+    }
+    .frame {
+      border: 3px dashed #f99;
+      padding: 30px;
+      margin: 30px;
+      border-radius: 20px;
+      background: #fff0f5;
+      box-shadow: 0 0 15px pink;
+    }
+    button {
+      background-color: pink;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 15px;
+      font-size: 18px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+    .hearts {
+      font-size: 30px;
+      animation: float 2s infinite;
+    }
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <audio autoplay loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mp3">
+  </audio>  <div class="page active" id="page1">
+    <div class="frame">
+      <div class="hearts">❤️🌹🎊🎉🥳</div>
+      <h2>مرحباً جوجو وجاسي</h2>
+      <p>هنا تبدأ رحلتك في رسالة من القلب...</p>
+      <button onclick="nextPage()">ابدئي</button>
+    </div>
+  </div>  <div class="page" id="page2">
+    <div class="frame">
+      <h2>رسالة حب</h2>
+      <p>
+        جوجو وجاسي،<br>
+        كنتِ وما زلتِ زهرةً نادرةً في بستان العمر، حديثكِ موسيقى، ووجودكِ دفءٌ وحنين. <br>
+        فيكِ من الرقي ما يُبهر، ومن النقاء ما يُسحر، وإنّي إذ أكتب إليكِ، فإنني أكتب إلى قلبي. <br>
+        أحبكِ أكثر مما أستطيع أن أعبر، وأقلّ مما تستحقين.
+      </p>
+      <button onclick="nextPage()">التالي</button>
+    </div>
+  </div>  <div class="page" id="page3">
+    <div class="frame">
+      <h2>عيد ميلاد سعيد</h2>
+      <p>
+        كل عام وأنتِ بخير، يا زهرة هذا اليوم ويا نجمته. <br>
+        في مثل هذا اليوم، وُلدت الابتسامة، وبدأ الجمال يحاكي الزمن.<br>
+        أسأل الله أن يكون عامكِ حبًا وفرحًا لا ينتهي.
+      </p>
+      <button onclick="nextPage()">التالي</button>
+    </div>
+  </div>  <div class="page" id="page4">
+    <div class="frame">
+      <h2>السؤال الأهم</h2>
+      <p>هل تقبلين مواعدتي؟</p>
+      <button onclick="wrongChoice()">لا</button>
+      <button onclick="wrongChoice()">لا</button>
+    </div>
+  </div>  <div class="page" id="page5">
+    <div class="frame">
+      <h2>أهااا!</h2>
+      <p>
+        هههه كنتُ لا أريدكِ أصلاً، ولكنكِ أصررتِ فأعذركِ، فالعاشق مثلكِ لا يُردّ!<br>
+        استعدي، فقد بدأت المغامرة...
+      </p>
+    </div>
+  </div>  <script>
+    let currentPage = 1;
+    function nextPage() {
+      document.getElementById(`page${currentPage}`).classList.remove("active");
+      currentPage++;
+      document.getElementById(`page${currentPage}`).classList.add("active");
+    }
+
+    function wrongChoice() {
+      document.getElementById("page4").classList.remove("active");
+      document.getElementById("page5").classList.add("active");
+    }
+  </script></body>
+</html>
